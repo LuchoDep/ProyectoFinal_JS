@@ -15,8 +15,8 @@ const precioCarrito = document.getElementById(`precioCarrito`)
 
 
 // traigo los productos desde la API y los guardo en el local storage
-fetch("../js/stock.json")
-// fetch("https://my-json-server.typicode.com/LuchoDep/APIStock/stock")
+// fetch("../js/stock.json")
+fetch("https://my-json-server.typicode.com/LuchoDep/APIStock/stock")
     .then((respuesta) => respuesta.json())
     .then((data) => {
         // console.log(data)
