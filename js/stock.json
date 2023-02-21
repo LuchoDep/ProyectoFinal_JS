@@ -1,0 +1,123 @@
+[
+    {
+        "id": 1,
+        "marca": "Fernet Branca",
+        "medida": "750cc",
+        "precio": 2000,
+        "cantidad": 1,
+        "alcohol": true,
+        "img": "../images/fernetBranca.webp"
+
+    },
+
+    {
+        "id": 2,
+        "marca": "Gancia Americano",
+        "medida": "950ml",
+        "precio": 900,
+        "cantidad": 1,
+        "alcohol": true,
+        "img": "../images/ganciaAmericano.webp"
+
+    },
+
+    {
+        "id": 3,
+        "marca": "Vodka Smirnoff",
+        "medida": "700ml",
+        "precio": 1400,
+        "cantidad": 1,
+        "alcohol": true,
+        "img": "../images/vodkaSmirnoff.webp"
+
+    },
+
+    {
+        "id": 4,
+        "marca": "Absolut Vodka",
+        "medida": "700ml",
+        "precio": 4500,
+        "cantidad": 1,
+        "alcohol": true,
+        "img": "../images/absolutVodka.webp"
+
+    },
+
+    {
+        "id": 5,
+        "marca": "Cerveza Brahma - Lata",
+        "medida": "473ml",
+        "precio": 220,
+        "cantidad": 1,
+        "alcohol": true,
+        "img": "../images/lataBrahma.webp"
+
+    },
+
+    {
+        "id": 6,
+        "marca": "Cerveza Stella Artois - Lata",
+        "medida": "473ml",
+        "precio": 360,
+        "cantidad": 1,
+        "alcohol": true,
+        "img": "../images/lataStella.webp"
+
+    },
+
+    {
+        "id": 7,
+        "marca": "Pepsi",
+        "medida":"2.25L",
+        "precio": 430,
+        "cantidad": 1,
+        "alcohol": false,
+        "img": "../images/botellaPepsi.webp"
+
+    },
+
+    {
+        "id": 8,
+        "marca": "Coca Cola",
+        "medida": "2.25L",
+        "precio": 550,
+        "cantidad": 1,
+        "alcohol": false,
+        "img": "../images/botellaCoca.webp"
+
+    },
+
+    {
+        "id": 9,
+        "marca": "Seven Up",
+        "medida": "2.25L",
+        "precio": 400,
+        "cantidad": 1,
+        "alcohol": false,
+        "img": "../images/botellaSeven.webp"
+
+    },
+
+    {
+        "id": 10,
+        "marca": "Mirinda",
+        "medida": "2.25L",
+        "precio": 350,
+        "cantidad": 1,
+        "alcohol": false,
+        "img": "../images/botellaMirinda.webp"
+
+    },
+
+    {
+        "id": 11, 
+        "marca": "Jugo Baggio",
+        "medida": "1L",
+        "precio": 240,
+        "cantidad": 1,
+        "alcohol": false,
+        "img": "../images/jugoBaggio.webp"
+
+    }
+
+]
