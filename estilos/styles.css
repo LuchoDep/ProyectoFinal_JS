@@ -65,3 +65,6 @@ a {
   .modal-dialog-slideout .modal-content {
     border: 0;
   }
+  .modal-footer{
+    justify-content: space-between;
+  }

@@ -1,17 +1,12 @@
 let carrito = [];
 
-// buscar en el local storage el carrito guardado en la ultima sesión
-document.addEventListener(`DOMContentLoaded`, () => {
-    carrito = JSON.parse(localStorage.getItem(`carritoJSON`)) || []
-    prodEnCarrito()
-})
-
-
 const bodyCarrito = document.querySelector(`.modal .modal-body`)
 const contCards = document.getElementById(`contCards`)
 const limpiarCarrito = document.getElementById(`vaciarCarrito`)
 const pagarCompra = document.getElementById(`pagarCompra`)
 const precioCarrito = document.getElementById(`precioCarrito`)
+const listaProductos = document.getElementById(`listaProductos`)
+const myModal = new bootstrap.Modal(document.getElementById('modalSlide'), { focus: false }) // sin esto no se puede escribir en las alertas del carrito
 
 
 // traigo los productos desde la API y los guardo en el local storage
@@ -22,8 +17,6 @@ fetch("https://my-json-server.typicode.com/LuchoDep/APIStock/stock")
         // console.log(data)
         const productosJSON = JSON.stringify(data)
         localStorage.setItem(`productosStock`, productosJSON)
-        // productos = data
-        // crearCards(productos)
     })
     .catch((err) => console.log(`algo no está bien`, err))
 
@@ -56,13 +49,12 @@ productosStock.forEach((producto) => {
 
 // añadir productos al carrito y crear las cards adentro
 function mandarAlCarrito(id) {
-    // console.log(id)
 
     // añadir duplicados
     const enCarrito = carrito.some(producto => producto.id === id)
-    if(enCarrito){
+    if (enCarrito) {
         const producto = carrito.map(producto => {
-            if(producto.id === id){
+            if (producto.id === id) {
                 producto.cantidad++
             }
         })
@@ -131,14 +123,40 @@ limpiarCarrito.addEventListener(`click`, () => {
 
 
 // 
-
-pagarCompra.addEventListener(`click`, () => {
-    location.href = "pages/pagarCompra.html"
-})
-
 //guardar en local storage
 function guardarEnLS() {
     localStorage.setItem("carritoJSON", JSON.stringify(carrito))
 }
 
+// procedo a "pagar" la compra
+pagarCompra.addEventListener(`click`, async () => {
+    if (carrito.length === 0) {
+        Swal.fire({
+            title: "¡El carrito está vacio!",
+            text: "Agrega productos para continuar",
+            icon: "error",
+            confirmButtonText: "Volver a la tienda",
+        });
+    } else {
+        const { value: formValues } = await Swal.fire({
+            title: '¡Tu compra está casi lista!',
+            html:
+                '<input id="nombreApellido" class="swal2-input" placeholder="Nombre y Apellido">' +
+                '<input id="direccionEnvio" class="swal2-input" placeholder="Dirección">',
+            showCancelButton: true,
+            cancelButtonColor: '#d33',
+            cancerButtonText: "Cancelar",
+            confirmButtonColor: "#008000",
+            confirmButtonText: "Siguiente",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    `¡Gracias por tu compra!`,
+                    `Tu envío llegará en breve`,
+                    `success`
+                )
+            }
+        })
 
+    }
+})
